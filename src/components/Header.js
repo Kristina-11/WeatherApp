@@ -1,21 +1,15 @@
-import React, { useState } from 'react'
-import { connect } from 'react-redux';
+import React from 'react'
 
 function Header() {
-    const [search, setSearch] = useState('');
-
-    const getWeatherData = (e) => {
-        e.preventDefault();
-        console.log(search)
-        setSearch('');
-        //return search;
-    }
-
+    
+    const date = new Date();
+    
     return (
         <header>
-            <form onSubmit={getWeatherData}>
-                <input type="search" name="search" id="search" onChange={(e) => setSearch(e.target.value)} />
-            </form>
+            <h1>Weather Live</h1>
+            <div>
+                { date.toDateString() }
+            </div>
         </header>
     )
 }
