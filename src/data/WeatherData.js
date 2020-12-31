@@ -32,7 +32,6 @@ const WeatherData = (props) => {
         e.preventDefault();
         let city = document.querySelector('#search').value;
         city !== '' ? setSearch(city) : setSearch('');
-        
     }
 
     const callToApi = (q) => {
