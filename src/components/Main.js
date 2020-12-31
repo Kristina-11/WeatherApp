@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import WeatherData from '../data/WeatherData'
+import location from '../img/location.png'
 
 function Main() {
     const [userLocation, setUserLocation] = useState('');
@@ -41,8 +42,11 @@ function Main() {
 
     return (
         <main>
-            <div onClick={getUserLocation}>Get user location</div>
-            { loading ? <div>Loading...</div> :
+            <div onClick={getUserLocation} className='location' >
+              <img src={location} alt='user location img' />
+              Get weather based on your location
+            </div>
+            { loading ? <div className='loading'>Loading...</div> :
             <WeatherData data={userData} /> }
         </main>
     )

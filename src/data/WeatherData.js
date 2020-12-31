@@ -111,17 +111,17 @@ const WeatherData = (props) => {
         </div>
         <div>
                 {loading ? 
-                    <div>Loading...</div> : 
+                    <div className='loading'>Loading...</div> : 
                     <div>
                         <h1>{ name } - { country } </h1>
-                        <div>{ showFormat === '°C' ? temperature : 
+                        <div className='temperature'>{ showFormat === '°C' ? temperature : 
                         calculateFarenhait(temperature) }{ showFormat }</div>
-                        <div> { weather }</div>
+                        <div className='weather'> { weather }</div>
                         <span>Humidity: { humidity }% | Feels like: { showFormat === '°C' ? feels : 
                         calculateFarenhait(feels) }{ showFormat }</span>
                     </div>
                 } 
-                <div onClick={toggleFormat}>Click to change to { format }</div>
+                <div onClick={toggleFormat}>Click me to change to { format }</div>
         </div>
         <div>
             {error ? error : null}
